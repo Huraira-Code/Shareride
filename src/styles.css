@@ -1,0 +1,113 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-map: var(--map);
+  --color-map-line: var(--map-line);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.003 130);
+  --foreground: oklch(0.2 0.012 160);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.012 160);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.012 160);
+  --primary: oklch(0.64 0.17 152);
+  --primary-foreground: oklch(0.99 0.01 150);
+  --primary-soft: oklch(0.95 0.04 152);
+  --primary-deep: oklch(0.45 0.12 155);
+  --secondary: oklch(0.965 0.004 130);
+  --secondary-foreground: oklch(0.2 0.012 160);
+  --muted: oklch(0.965 0.004 130);
+  --muted-foreground: oklch(0.52 0.012 160);
+  --accent: oklch(0.95 0.04 152);
+  --accent-foreground: oklch(0.3 0.08 155);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.915 0.005 130);
+  --input: oklch(0.9 0.005 130);
+  --ring: oklch(0.64 0.17 152);
+  --ink: oklch(0.19 0.012 160);
+  --ink-foreground: oklch(0.97 0.005 130);
+  --map: oklch(0.975 0.004 130);
+  --map-line: oklch(0.89 0.006 130);
+  --shadow-float: 0 1px 2px oklch(0.2 0.01 160 / 0.04), 0 24px 48px -24px oklch(0.2 0.01 160 / 0.18);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+}
+
+@utility shadow-float { box-shadow: var(--shadow-float); }
+
+@utility route-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+@utility route-flow {
+  stroke-dasharray: 4 10;
+  animation: flow 1.2s linear infinite;
+}
+@utility pop-in {
+  opacity: 0;
+  animation: pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@utility pulse-ring { animation: ring 2.2s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.2,0.8,0.2,1), transform 0.8s cubic-bezier(0.2,0.8,0.2,1); }
+.reveal.is-in { opacity: 1; transform: none; }
+.reveal:not(.is-in) .route-draw, .reveal:not(.is-in) .pop-in { animation-play-state: paused; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes flow { to { stroke-dashoffset: -14; } }
+@keyframes pop { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(3); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .route-draw, .pop-in, .route-flow, .pulse-ring { animation: none !important; stroke-dashoffset: 0; opacity: 1; }
+  .reveal { opacity: 1; transform: none; }
+}
