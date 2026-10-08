@@ -1,5 +1,5 @@
 globalThis.__nitro_main__ = import.meta.url;
-import { n as defineLazyEventHandler, r as HTTPError, t as H3Core } from "./_libs/h3+rou3+srvx.mjs";
+import { i as HTTPError, n as defineLazyEventHandler, t as H3Core } from "./_libs/h3+rou3+srvx.mjs";
 import { t as HookableCore } from "./_libs/hookable.mjs";
 import { r as FastResponse } from "./_libs/h3-v2+rou3+srvx.mjs";
 //#region #nitro-vite-setup
@@ -19,42 +19,42 @@ var public_assets_data_default = {
 	"/_redirects": {
 		"type": "text/plain; charset=utf-8",
 		"etag": "\"49-+LX5cbvTQOCvqFhu62gVMpbcKAI\"",
-		"mtime": "2026-10-08T06:23:06.078Z",
+		"mtime": "2026-10-08T06:32:48.472Z",
 		"size": 73,
 		"path": "../public/_redirects"
 	},
 	"/favicon.svg": {
 		"type": "image/svg+xml",
 		"etag": "\"2532-P1u486agW3ymimJYHS3VvIiBLK8\"",
-		"mtime": "2026-10-08T06:23:06.077Z",
+		"mtime": "2026-10-08T06:32:48.472Z",
 		"size": 9522,
 		"path": "../public/favicon.svg"
 	},
 	"/icons.svg": {
 		"type": "image/svg+xml",
 		"etag": "\"13a7-+Yl6wl4T3p6mAdLxrF2TU9++/No\"",
-		"mtime": "2026-10-08T06:23:06.078Z",
+		"mtime": "2026-10-08T06:32:48.472Z",
 		"size": 5031,
 		"path": "../public/icons.svg"
 	},
 	"/assets/index-DlbKDWAk.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"5a39b-vZxN3ep2PK/LkQrJY9S/plpCSYc\"",
-		"mtime": "2026-10-08T06:23:05.103Z",
+		"mtime": "2026-10-08T06:32:47.536Z",
 		"size": 369563,
 		"path": "../public/assets/index-DlbKDWAk.js"
 	},
 	"/assets/styles-Dq6o522b.css": {
 		"type": "text/css; charset=utf-8",
 		"etag": "\"13e6d-HdDuTNbT/SJ/h3tli0+t1gq702w\"",
-		"mtime": "2026-10-08T06:23:05.104Z",
+		"mtime": "2026-10-08T06:32:47.537Z",
 		"size": 81517,
 		"path": "../public/assets/styles-Dq6o522b.css"
 	},
 	"/assets/routes-B4VKFwRU.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"ed31-8KZXmJDWi5VACu5/vTe7c4TpK9o\"",
-		"mtime": "2026-10-08T06:23:05.104Z",
+		"mtime": "2026-10-08T06:32:47.536Z",
 		"size": 60721,
 		"path": "../public/assets/routes-B4VKFwRU.js"
 	}
@@ -94,11 +94,11 @@ var findRouteRules = /* @__PURE__ */ (() => {
 		return r;
 	};
 })();
-var _lazy_nnSpT2 = defineLazyEventHandler(() => import("./_chunks/renderer-template.mjs"));
+var _lazy_0Snsrl = defineLazyEventHandler(() => import("./_chunks/ssr-renderer.mjs"));
 var findRoute = /* @__PURE__ */ (() => {
 	const data = {
 		route: "/**",
-		handler: _lazy_nnSpT2
+		handler: _lazy_0Snsrl
 	};
 	return ((_m, p) => {
 		return {
