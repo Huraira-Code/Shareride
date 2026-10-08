@@ -2,7 +2,7 @@ import { n as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
 import { _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CtgQrF20.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-mAIU2-YD.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-Dq6o522b.css";
@@ -113,22 +113,18 @@ var Route$1 = createRootRouteWithContext()({
 				name: "viewport",
 				content: "width=device-width, initial-scale=1"
 			},
-			{ title: "Lovable App" },
+			{ title: "ShareRide - Karachi" },
 			{
 				name: "description",
-				content: "Lovable Generated Project"
-			},
-			{
-				name: "author",
-				content: "Lovable"
+				content: "Split fares in Karachi"
 			},
 			{
 				property: "og:title",
-				content: "Lovable App"
+				content: "ShareRide"
 			},
 			{
 				property: "og:description",
-				content: "Lovable Generated Project"
+				content: "Split fares in Karachi"
 			},
 			{
 				property: "og:type",
@@ -137,10 +133,6 @@ var Route$1 = createRootRouteWithContext()({
 			{
 				name: "twitter:card",
 				content: "summary_large_image"
-			},
-			{
-				name: "twitter:site",
-				content: "@Lovable"
 			}
 		],
 		links: [
@@ -163,10 +155,17 @@ var Route$1 = createRootRouteWithContext()({
 			},
 			{
 				rel: "icon",
-				href: "/favicon.ico",
-				type: "image/x-icon"
+				href: "/favicon.svg",
+				type: "image/svg+xml"
 			}
-		]
+		],
+		scripts: [{ children: `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLQDWX2T');
+        ` }]
 	}),
 	shellComponent: RootShell,
 	component: RootComponent,
@@ -176,7 +175,19 @@ var Route$1 = createRootRouteWithContext()({
 function RootShell({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("noscript", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("iframe", {
+				src: "https://www.googletagmanager.com/ns.html?id=GTM-PLQDWX2T",
+				height: "0",
+				width: "0",
+				style: {
+					display: "none",
+					visibility: "hidden"
+				}
+			}) }),
+			children,
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})
+		] })]
 	});
 }
 function RootComponent() {
